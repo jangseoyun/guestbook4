@@ -25,6 +25,7 @@ public class GuestController {
 	//메소드 g,s
 	
 	//메소드 일반
+	
 	@RequestMapping(value="/addList", method = {RequestMethod.GET, RequestMethod.POST})
 	public String test(Model model) {
 		
@@ -48,6 +49,7 @@ public class GuestController {
 		return "redirect:/guest/addList";
 	}
 	
+	
 	@RequestMapping(value="/deleteForm", method = {RequestMethod.GET, RequestMethod.POST})
 	public String deleteForm() {
 		
@@ -61,6 +63,7 @@ public class GuestController {
 	public String delete(@RequestParam("password") String password,
 						 @RequestParam("no") int no) {
 		
+		System.out.println("guest/delete");
 		guestbookDao.guestbookDelete(no, password);
 		
 		return "redirect:/guest/addList";
